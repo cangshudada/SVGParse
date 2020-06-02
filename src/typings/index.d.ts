@@ -3,6 +3,14 @@ declare namespace SvgParse {
     type Points = Point[]
 }
 
+declare class SvgParse2Point {
+    pathParse: (svgPathString: string, transfrom?: string, pointDensity?: number) => SvgParse.Points
+    polyParse: (parseString: string, transfrom?: string) => SvgParse.Points
+    circleParse: (cx: number, cy: number, r: number, transfrom?: string, pointDensity?: number) => SvgParse.Points
+    ellipseParse: (cx: number, cy: number, rx: number, ry: number, transfrom?: string, pointDensity?: number) => SvgParse.Points
+    rectParse: (x: number, y: number, width: number, height: number, rx?: number, ry?: number, transfrom?: string, pointDensity?: number) => SvgParse.Points
+}
+
 declare module 'svg-path-parser' {
     export function parseSVG(input: string): Command[];
     export function makeAbsolute(commands: Command[]): Command[];
@@ -22,6 +30,8 @@ declare module 'svg-path-parser' {
         code: 'm' | 'M';
         command: 'moveto';
         relative?: boolean;
+        x0: number,
+        y0: number,
         x: number;
         y: number;
     }
@@ -30,6 +40,8 @@ declare module 'svg-path-parser' {
         code: 'l' | 'L';
         command: 'lineto';
         relative?: boolean;
+        x0: number,
+        y0: number,
         x: number;
         y: number;
     }
@@ -38,6 +50,8 @@ declare module 'svg-path-parser' {
         code: 'h' | 'H';
         command: 'horizontal lineto';
         relative?: boolean;
+        x0: number,
+        y0: number,
         x: number;
     }
 
@@ -45,6 +59,8 @@ declare module 'svg-path-parser' {
         code: 'v' | 'V';
         command: 'vertical lineto';
         relative?: boolean;
+        x0: number,
+        y0: number,
         y: number;
     }
 
@@ -58,6 +74,8 @@ declare module 'svg-path-parser' {
         code: 'c' | 'C';
         command: 'curveto';
         relative?: boolean;
+        x0: number,
+        y0: number,
         x1: number;
         y1: number;
         x2: number;
@@ -70,6 +88,8 @@ declare module 'svg-path-parser' {
         code: 's' | 'S';
         command: 'smooth curveto';
         relative?: boolean;
+        x0: number,
+        y0: number,
         x2: number;
         y2: number;
         x: number;
@@ -80,6 +100,8 @@ declare module 'svg-path-parser' {
         code: 'q' | 'Q';
         command: 'quadratic curveto';
         relative?: boolean;
+        x0: number,
+        y0: number,
         x1: number;
         y1: number;
         x: number;
@@ -90,6 +112,8 @@ declare module 'svg-path-parser' {
         code: 't' | 'T';
         command: 'smooth quadratic curveto';
         relative?: boolean;
+        x0: number,
+        y0: number,
         x: number;
         y: number;
     }
@@ -98,6 +122,8 @@ declare module 'svg-path-parser' {
         code: 'a' | 'A';
         command: 'elliptical arc';
         relative?: boolean;
+        x0: number,
+        y0: number,
         rx: number;
         ry: number;
         xAxisRotation: number;

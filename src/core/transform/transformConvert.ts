@@ -20,13 +20,16 @@ export class TransformConvert {
         splitInfo.forEach(splitText => {
             const text = splitText.split('(');
             if (text[0]) {
-
                 transformText.push({
                     oper: text[0],
                     data: text[1].indexOf(',') !== -1 ? text[1].split(',') : text[1].split(' ')
                 })
             }
         })
+
+        if(transformText.length === 0){
+            throw Error('transform property is ERROR!')
+        }
 
         return this.parseTransformText(transformText, points)
     }

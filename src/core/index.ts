@@ -1,14 +1,5 @@
-import { pathParse } from './path/pathParse';
-import { polyParse } from './polygon/polyParse';
-import { circleParse } from './circle/circleParse';
-import { ellipseParse } from './ellipse/ellipseParse';
-import { rectParse } from './rect/rectParse';
-
-export default {
-    pathParse,
-    polyParse,
-    polylineParse: polyParse,
-    circleParse,
-    ellipseParse,
-    rectParse
-}
+export { pathParse } from './path/pathParse';
+export { polyParse } from './polygon/polyParse';
+export { circleParse } from './circle/circleParse';
+export { ellipseParse } from './ellipse/ellipseParse';
+export { rectParse } from './rect/rectParse';

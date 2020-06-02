@@ -7,10 +7,10 @@ const package = require("../package.json");
 module.exports = {
     entry: path.resolve(__dirname, '../src/index.ts'),
     output: {
-        filename: 'path2poly.js',
+        filename: 'svgParse.js',
         path: path.resolve(__dirname, '../dist'),
         libraryExport: "default",
-        library: "path2poly",
+        library: "SvgParse",
         libraryTarget: "umd"
     },
     resolve: {

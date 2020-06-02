@@ -16,6 +16,9 @@ const bezierCurve2point = new BezierCurve2point();
  * @returns {SvgParse.Points}
  */
 export const rectParse = (x: number, y: number, width: number, height: number, rx: number = 0, ry: number = 0, transfrom?: string, pointDensity: number = 20): SvgParse.Points => {
+    if (pointDensity <= 0) {
+        throw Error('pointDensity cannot be 0 or negative')
+    }
     let _parseRect: SvgParse.Points = [];
     if (rx !== 0 || ry !== 0) {
         // 左上角
