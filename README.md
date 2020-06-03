@@ -248,7 +248,7 @@ console.log('pointArray >>',pointArray)
 
 
 
-If you find a bugs, welcome to submit [issues](https://github.com/cangshudada/SVGParse/issues),THANKS！😉
+If you find a bug, welcome to submit [issues](https://github.com/cangshudada/SVGParse/issues),THANKS！😉
 
 
 
