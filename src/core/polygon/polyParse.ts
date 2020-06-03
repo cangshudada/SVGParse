@@ -8,7 +8,14 @@ import { TransformConvert } from '../transform/transformConvert';
  * @param {string} [transfrom] 是否有矩阵换算
  */
 export const polyParse = (parseString: string, transfrom?: string): SvgParse.Points => {
-    let convertPoints = parseString.split(' ').reduce((prev: SvgParse.Points, points: string) => {
+    if (!parseString) {
+        console.warn('please afferent related parameters!')
+        return []
+    }
+
+    let convertPoints = parseString.split(' ').filter(point => {
+        return point != "" && point.split(',').length === 2;
+    }).reduce((prev: SvgParse.Points, points: string) => {
         prev.push({
             x: parseFloat(points.split(',')[0]),
             y: parseFloat(points.split(',')[1])

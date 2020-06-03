@@ -7,7 +7,7 @@ const package = require("../package.json");
 module.exports = {
     entry: path.resolve(__dirname, '../src/index.ts'),
     output: {
-        filename: 'svgParse.js',
+        filename: 'svgParse.min.js',
         path: path.resolve(__dirname, '../dist'),
         libraryExport: "default",
         library: "SvgParse",

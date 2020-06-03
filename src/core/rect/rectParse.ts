@@ -19,6 +19,12 @@ export const rectParse = (x: number, y: number, width: number, height: number, r
     if (pointDensity <= 0) {
         throw Error('pointDensity cannot be 0 or negative')
     }
+
+    if (!x || !y || !width || !height) {
+        console.warn('please afferent related parameters!')
+        return []
+    }
+
     let _parseRect: SvgParse.Points = [];
     if (rx !== 0 || ry !== 0) {
         // 左上角

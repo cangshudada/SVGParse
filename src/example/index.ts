@@ -1,8 +1,4 @@
-import { pathParse } from '../core';
-import { polyParse } from '../core';
-import { circleParse } from '../core';
-import { ellipseParse } from '../core';
-import { rectParse } from '../core';
+import { pathParse, polyParse, circleParse, ellipseParse, rectParse } from '../core';
 
 window.onload = function () {
     const cav1 = document.getElementById('myCanvas1') as HTMLCanvasElement;
@@ -24,7 +20,7 @@ window.onload = function () {
     const ctx6 = cav6.getContext('2d');
 
     // circle parse
-    const pointArray1 = circleParse(2500, 2500, 800);
+    const pointArray1 = circleParse(500, 500, 200);
     if (ctx1) {
         ctx1.beginPath()
         pointArray1.forEach((point, index) => {
@@ -41,7 +37,7 @@ window.onload = function () {
     }
 
     // ellipse parse
-    const pointArray2 = ellipseParse(2500, 2500, 1000, 600);
+    const pointArray2 = ellipseParse(500, 500, 200, 100);
     if (ctx2) {
         ctx2.beginPath()
         pointArray2.forEach((point, index) => {
@@ -53,13 +49,13 @@ window.onload = function () {
         })
         ctx2.lineTo(pointArray2[0].x, pointArray2[0].y);
         ctx2.lineWidth = 6;
-        ctx2.strokeStyle = '#ff0000';
+        ctx2.strokeStyle = '#00ff00';
         ctx2.stroke();
     }
 
 
     // path parse
-    const pointArray3 = pathParse('M3676.5,1589.5c0,0-491-561-361,383s-121,1126-313,1070s-312,857,61,909s1700-126,1530-400 s379-1247,196-1365s26-809-374-635S3676.5,1589.5,3676.5,1589.5z', '', 20)
+    const pointArray3 = pathParse('M382.2,547.1c-66.6,32-177.6,4.1-193.4,0c32.1-12.6,73.5-33.2,76.7-60.7c3.8-32.6-49.2-46.6-90-93.1 c-59.6-67.9-41-145.5-23.3-147.8c16.8-2.2,35.3,63.8,76.7,64.8c53.2,1.2,76-106.2,120.1-105.3c48.5,1,74,132.6,76.7,216.6 C428.7,518.3,401,538.1,382.2,547.1z', '', 20)
     if (ctx3) {
         ctx3.beginPath()
         pointArray3.forEach((point, index) => {
@@ -71,12 +67,12 @@ window.onload = function () {
         })
         ctx3.lineTo(pointArray3[0].x, pointArray3[0].y);
         ctx3.lineWidth = 6;
-        ctx3.strokeStyle = '#ff0000';
+        ctx3.strokeStyle = '#0000ff';
         ctx3.stroke();
     }
 
     // polygon parse
-    const pointArray4 = polyParse("2500,250 1000,4950 4750,1950 250,1950 4000,4950")
+    const pointArray4 = polyParse("500,50 200,990 950,390 50,390 800,990")
     if (ctx4) {
         ctx4.beginPath()
         pointArray4.forEach((point, index) => {
@@ -88,12 +84,12 @@ window.onload = function () {
         })
         ctx4.lineTo(pointArray4[0].x, pointArray4[0].y);
         ctx4.lineWidth = 6;
-        ctx4.strokeStyle = '#ff0000';
+        ctx4.strokeStyle = '#ffff00';
         ctx4.stroke();
     }
 
     // polyline parse
-    const pointArray5 = polyParse("2500,250 1000,4950 4750,1950 250,1950 4000,4950")
+    const pointArray5 = polyParse("500,50 200,990 950,390 50,390 800,990")
     if (ctx5) {
         ctx5.beginPath()
         pointArray5.forEach((point, index) => {
@@ -105,12 +101,12 @@ window.onload = function () {
         })
         ctx5.lineTo(pointArray5[0].x, pointArray5[0].y);
         ctx5.lineWidth = 6;
-        ctx5.strokeStyle = '#ff0000';
+        ctx5.strokeStyle = '#00ffff';
         ctx5.stroke();
     }
 
     // polyline parse
-    const pointArray6 = rectParse(2500, 1000, 1000, 1000, 30, 30, 'matrix(0.8938 0.4484 -0.4484 0.8938 96.9396 -59.4412)')
+    const pointArray6 = rectParse(100, 40, 350, 350, 30, 30, 'matrix(0.8938 0.4484 -0.4484 0.8938 96.9396 -59.4412)')
     if (ctx6) {
         ctx6.beginPath()
         pointArray6.forEach((point, index) => {
@@ -122,7 +118,7 @@ window.onload = function () {
         })
         ctx6.lineTo(pointArray6[0].x, pointArray6[0].y);
         ctx6.lineWidth = 6;
-        ctx6.strokeStyle = '#ff0000';
+        ctx6.strokeStyle = '#ff00ff';
         ctx6.stroke();
     }
 };

@@ -7,7 +7,7 @@ const bezierCurve2point = new BezierCurve2point();
 /**
  *
  * @description parse Path
- * @param {string} svgPathString path标签D字符串（目前A标签还没有合适的算法解析转点，欢迎贡献）
+ * @param {string} svgPathString path标签D字符串（目前A标签还没有合适的算法来解析转点，欢迎贡献）
  * @param {string} [transfrom] 是否有矩阵换算
  * @param {number} [pointDensity=10] 生成点密度，主要为弧线部分 弧线默认转为10个点
  * @returns {SvgParse.Points}
@@ -16,6 +16,12 @@ export const pathParse = (svgPathString: string, transfrom?: string, pointDensit
     if (pointDensity <= 0) {
         throw Error('pointDensity cannot be 0 or negative')
     }
+
+    if (!svgPathString) {
+        console.warn('please afferent related parameters!')
+        return []
+    }
+    
     let _pathParse = [] as SvgParse.Points;
     // 记录连续标签'T'时上一个控制点坐标
     let _controlPoint: SvgParse.Point = {

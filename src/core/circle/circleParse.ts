@@ -13,6 +13,13 @@ export const circleParse = (cx: number, cy: number, r: number, transfrom?: strin
     if (pointDensity <= 0) {
         throw Error('pointDensity cannot be 0 or negative')
     }
+
+    if (!cx || !cy || !r) {
+        console.warn('please afferent related parameters!')
+        return []
+    }
+
+
     const _pointDensity = Math.abs(pointDensity);
     const angleCount = Math.floor(360 / _pointDensity);
     let acrPoint: SvgParse.Points = [];

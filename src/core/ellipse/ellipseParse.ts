@@ -3,8 +3,8 @@ import { TransformConvert } from '../transform/transformConvert';
 /**
  *
  * @description 根据椭圆生成相应点阵坐标
- * @param {number} [cx=0] 椭圆中心点x坐标
- * @param {number} [cy=0] 椭圆中心点y坐标
+ * @param {number} cx 椭圆中心点x坐标
+ * @param {number} cy 椭圆中心点y坐标
  * @param {number} rx x轴半径
  * @param {number} ry y轴半径
  * @param {string} [transfrom] 是否有矩阵换算
@@ -14,6 +14,11 @@ import { TransformConvert } from '../transform/transformConvert';
 export const ellipseParse = (cx: number, cy: number, rx: number, ry: number, transfrom?: string, pointDensity: number = 2) => {
     if (pointDensity <= 0) {
         throw Error('pointDensity cannot be 0 or negative')
+    }
+
+    if (!cx || !cy || !rx || !ry) {
+        console.warn('please afferent related parameters!')
+        return []
     }
 
     let _radiusX = -rx;

@@ -1,8 +1,4 @@
-import { pathParse } from './core';
-import { polyParse } from './core';
-import { circleParse } from './core';
-import { ellipseParse } from './core';
-import { rectParse } from './core';
+import { pathParse, polyParse, circleParse, ellipseParse, rectParse } from './core';
 
 class SvgParse {
     public pathParse = pathParse
