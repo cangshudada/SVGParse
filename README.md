@@ -1,4 +1,4 @@
-SVGParse.js [![npm](https://img.shields.io/npm/v/svg-parse2point.svg?style=flat)](https://www.npmjs.com/package/svg-parse2point) [![npm](https://img.shields.io/npm/l/svg-parse2point.svg?style=flat)](https://www.npmjs.com/package/svg-parse2point)
+SVGParse.js [![GitHub release (latest by date)](https://img.shields.io/github/v/release/cangshudada/SVGParse.svg?style=flat-square)](https://www.npmjs.com/package/svg-parse2point) [![GitHub file size in bytes](https://img.shields.io/github/size/cangshudada/SVGParse/dist/svgParse.min.js?style=flat-square)](https://github.com/cangshudada/SVGParse/tree/master/dist) [![GitHub](https://img.shields.io/github/license/cangshudada/SVGParse?style=flat-square)](https://github.com/cangshudada/SVGParse/blob/master/LICENSE)
 ===
 ⚙Node package that parse SVG tags to Polygonal points.
 
