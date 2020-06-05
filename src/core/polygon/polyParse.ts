@@ -13,7 +13,7 @@ export const polyParse = (parseString: string, transfrom?: string): SvgParse.Poi
         return []
     }
 
-    let convertPoints = parseString.split(' ').filter(point => {
+    let convertPoints = parseString.trim().split(' ').filter(point => {
         return point != "" && point.split(',').length === 2;
     }).reduce((prev: SvgParse.Points, points: string) => {
         prev.push({

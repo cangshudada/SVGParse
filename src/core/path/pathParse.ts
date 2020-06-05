@@ -29,7 +29,7 @@ export const pathParse = (svgPathString: string, transfrom?: string, pointDensit
         y: 0
     };
 
-    makeAbsolute(parseSVG(svgPathString)).forEach((cmd, index, cmds) => {
+    makeAbsolute(parseSVG(svgPathString.trim())).forEach((cmd, index, cmds) => {
 
         switch (cmd.code) {
             case 'M': { //moveTo
